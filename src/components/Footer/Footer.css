@@ -10,20 +10,22 @@ footer {
   .left_footer {
     width: 20%;
     display: flex;
-  
     flex-direction: column;
     align-items: center;
   }
+
   .left_footer > h4 {
     font-family: "Roboto";
     font-size: 1vmax;
   }
+
   .left_footer > p {
     text-align: center;
     font-size: 1.2vmax;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   }
+
   .left_footer > img {
     width: 10vmax;
     margin: 1vmax;
@@ -48,7 +50,6 @@ footer {
 
   .right_footer {
     width: 20%;
-  
     display: flex;
     flex-direction: column;
     align-items: center;
