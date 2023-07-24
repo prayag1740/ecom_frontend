@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
 import { Header } from './components/Header/Header';
-import {BrowserRouter as Router} from "react-router-dom"
+import { Home } from './components/Home/Home'
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import WebFont from 'webfontloader';
 import { Footer } from './components/Footer/Footer';
 
@@ -18,7 +19,10 @@ function App() {
   return (
     <>
     <Router>
-    <Header />
+     <Header />
+    <Routes>
+    <Route exact path='/' Component={Home} />
+    </Routes>
     <Footer />
     </Router>
     </>

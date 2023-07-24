@@ -1,0 +1,72 @@
+.productcard {
+    width: 14vmax;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    margin: 4vmax;
+    transition: all 0.5s;
+}
+
+.productcard > img {
+    width: 14vmax
+}
+
+.productcard > div {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0.5vmax;
+}
+
+.productcard > div > span {
+    font: 300 1vmax "Roboto";
+    margin: 0.5vmax;
+}
+
+.productcard > span {
+    color: tomato;
+    font-family: "Franklin Gothic Medium";
+    font-size: 1vmax;
+    margin: 0.5vmax;
+}
+.productcard > p {
+    font-family: "Roboto";
+    font-size: 1vmax;
+    margin-bottom: 0.5vmax;
+    margin-left: 0.5vmax;
+}
+
+/*
+syntax
+box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]; */
+
+/* diplay : block -- shows the items as a block element ; starts on a new line and takes up whole width */
+
+.productcard:hover {
+    box-shadow: 0 0 5px rgba(15,15,15,0.26);
+    transform: translateY(-1vmax);
+
+}
+
+/* if browser window is smaller than or equal 600px ; above font appears smaller for smaller windows and hence we are 
+    increasing the window size */
+@media screen and (max-width: 600px) {
+    .productcard > p {
+        font-size: 1.7vmax;
+    }
+
+    .productCard > div {
+        margin: 0vmax;
+        display: block;
+    }
+
+    .productCard > span {
+        font-size: 1.5vmax;
+    }
+
+    .productCard > div > span {
+        margin: 0 0.5vmax;
+        font: 300 1vmax "Roboto";
+    }
+
+
+} 
