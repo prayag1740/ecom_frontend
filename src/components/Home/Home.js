@@ -1,19 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { CgMouse } from "react-icons/cg"
+import { getProduct } from '../../actions/productAction'
 import  Metadata from "../MetaData"
+import Loader from '../Loader/Loader'
 import { ProductCard } from '../ProductCard/ProductCard'
+import { useDispatch, useSelector } from 'react-redux' ;
 
 import "./Home.css"
 
-const product = {
-    name : "Blue Tshirt",
-    images : [{"url" : "https://picsum.photos/200/300"}],
-    price : "2000",
-    _id : "12"
-}
+// usedispatch hook calls the store to getproduct from the store; ie sends a message to store to change it's state
+// in useffect we have used [dispatch] ; so effectis triggered only when the dispatch function changes
+// dispatch is a stable reference , effect is run only once.
 
 export const Home = () => {
+
+    const dispatch = useDispatch() ;
+    const { loading, error, products, productsCount } = useSelector( (state) => state.product ) ;
+    
+    useEffect(() => {
+        dispatch(getProduct());
+    }, [dispatch]) ;
+
   return (
+   <>
+   {loading ? <Loader /> :
    <>
    <Metadata title="Ecommerce" />
    <div className='banner'>
@@ -32,17 +42,10 @@ export const Home = () => {
     </h2>
 
     <div className='container' id='container'>
-        <ProductCard product={product} />
-        <ProductCard product={product} />
-        <ProductCard product={product} />
-        <ProductCard product={product} />
-
-        <ProductCard product={product} />
-        <ProductCard product={product} />
-        <ProductCard product={product} />
-        <ProductCard product={product} />
+    { products && products.map( (product) => <ProductCard product={product} key={product.id} />) }
     </div>    
 
+   </>}
    </>
   )
 }
