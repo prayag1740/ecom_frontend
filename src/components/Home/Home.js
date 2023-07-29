@@ -5,6 +5,7 @@ import  Metadata from "../MetaData"
 import Loader from '../Loader/Loader'
 import { ProductCard } from '../ProductCard/ProductCard'
 import { useDispatch, useSelector } from 'react-redux' ;
+import { useAlert } from 'react-alert'
 
 import "./Home.css"
 
@@ -14,12 +15,16 @@ import "./Home.css"
 
 export const Home = () => {
 
+    const alert = useAlert() ;
     const dispatch = useDispatch() ;
     const { loading, error, products, productsCount } = useSelector( (state) => state.product ) ;
     
     useEffect(() => {
+        if (error) {
+            return alert.error(error.error);
+        }
         dispatch(getProduct());
-    }, [dispatch]) ;
+    }, [dispatch, error]) ;
 
   return (
    <>

@@ -19,11 +19,9 @@ export const getProduct = () => async (dispatch) => {
 
 
     } catch (error) {
-        console.log("hellloo")
-        console.log(error)
         dispatch({
             type: ALL_PRODUCT_FAIL,
-            payload: error.response
+            payload: error.response.data
         })
     }
 } 

@@ -1,1 +1,12 @@
+TODOS
 1) check for CORS issue at client side.
+
+
+_____________________
+
+IMP NOTES
+
+vh (viewport height) -- viewable area of webpage
+1 vh -- 1% of viewport height
+
+vmax is larger value of vh or vw

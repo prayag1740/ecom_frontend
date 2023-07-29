@@ -5,8 +5,8 @@
 }
 
 .loading > div {
-width: 10vmax;
-height: 10vmax;
+width: 10vw;
+height: 10vw;
 border-bottom: 5px solid rgba(0, 0, 0, 0.719);
 margin: 400px 900px; 
 border-radius: 50%;
