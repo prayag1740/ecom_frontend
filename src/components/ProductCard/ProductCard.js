@@ -20,7 +20,7 @@ export const ProductCard = (props) => {
 
   return (
     <>
-        <Link className='productcard' to={product._id}>
+        <Link className='productcard' to={`/product/${product.id}`}>
             <img src={product.images[0].url} alt={product.name} />
             <p>{product.name}</p>
             <div>
